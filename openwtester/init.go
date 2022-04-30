@@ -3,7 +3,7 @@ package openwtester
 import (
 	"github.com/blocktree/openwallet/v2/log"
 	"github.com/blocktree/openwallet/v2/openw"
-	"github.com/blocktree/tron-adapter/tron"
+	"github.com/zhengjianfeng1103/tron-adapter/tron"
 )
 
 func init() {

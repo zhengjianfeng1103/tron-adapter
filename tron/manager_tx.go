@@ -20,9 +20,9 @@ import (
 	"fmt"
 
 	"github.com/blocktree/openwallet/v2/log"
-	"github.com/blocktree/tron-adapter/tron/grpc-gateway/core"
 	"github.com/golang/protobuf/proto"
 	"github.com/imroc/req"
+	"github.com/zhengjianfeng1103/tron-adapter/tron/grpc-gateway/core"
 )
 
 // GetTotalTransaction Done!

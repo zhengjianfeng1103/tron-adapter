@@ -62,6 +62,8 @@ type WalletConfig struct {
 	RPCUser string
 	//RPCPassword RPC认证账户密码
 	RPCPassword string
+
+	AccessToken string
 	//证书目录
 	CertsDir string
 	//钥匙备份路径

@@ -19,8 +19,8 @@ import (
 	"encoding/hex"
 	"fmt"
 	"github.com/blocktree/openwallet/v2/common"
-	"github.com/blocktree/tron-adapter/tron/grpc-gateway/core"
 	"github.com/golang/protobuf/proto"
+	"github.com/zhengjianfeng1103/tron-adapter/tron/grpc-gateway/core"
 	"math/big"
 	"sort"
 	"strings"
@@ -808,7 +808,7 @@ func (decoder *TransactionDecoder) CreateTokenSummaryRawTransaction(wrapper open
 			feesSupportScale, _ := decimal.NewFromString(sumRawTx.FeesSupportAccount.FeesSupportScale)
 			fixSupportAmount, _ := decimal.NewFromString(sumRawTx.FeesSupportAccount.FixSupportAmount)
 			//1 Energy = 140 SUN, 1 trx = 1000000 SUN, fees(trx) = Energy * 100000
-			fees := decimal.New(feeMini * 140, -decoder.wm.Decimal())
+			fees := decimal.New(feeMini*140, -decoder.wm.Decimal())
 
 			//优先采用固定支持数量
 			if fixSupportAmount.GreaterThan(decimal.Zero) {

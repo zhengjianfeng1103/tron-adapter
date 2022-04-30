@@ -47,6 +47,8 @@ func (wm *WalletManager) LoadConfig() error {
 	wm.Config.SumAddress = c.String("sumAddress")
 	wm.Config.RPCUser = c.String("rpcUser")
 	wm.Config.RPCPassword = c.String("rpcPassword")
+	wm.Config.AccessToken = c.String("accessToken")
+
 	wm.Config.NodeInstallPath = c.String("nodeInstallPath")
 	wm.Config.FeeLimit, _ = c.Int64("feeLimit")
 	wm.Config.FeeMini, _ = c.Int64("feeMini")
@@ -57,7 +59,7 @@ func (wm *WalletManager) LoadConfig() error {
 		wm.Config.WalletDataPath = c.String("mainNetDataPath")
 	}
 	wm.Config.IgnoreDustTRX, _ = decimal.NewFromString(c.String("ignoreDustTRX"))
-	wm.WalletClient = NewClient(wm.Config.ServerAPI, "", false)
+	wm.WalletClient = NewClient(wm.Config.ServerAPI, wm.Config.AccessToken, true)
 
 	return nil
 }

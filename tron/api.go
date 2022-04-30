@@ -30,18 +30,18 @@ import (
 // request and responses. A Client must be configured with a secret token
 // to authenticate with other Cores on the network.
 type Client struct {
-	BaseURL string
-	// AccessToken string
-	Debug  bool
-	client *req.Req
+	BaseURL     string
+	AccessToken string
+	Debug       bool
+	client      *req.Req
 }
 
 // NewClient create new client to connect
 func NewClient(url, token string, debug bool) *Client {
 	c := Client{
-		BaseURL: url,
-		// AccessToken: token,
-		Debug: debug,
+		BaseURL:     url,
+		AccessToken: token,
+		Debug:       debug,
 	}
 
 	api := req.New()
@@ -60,7 +60,7 @@ func (c *Client) Call(path string, param interface{}) (*gjson.Result, error) {
 	}
 
 	url := c.BaseURL + path
-	authHeader := req.Header{"Accept": "application/json"}
+	authHeader := req.Header{"Accept": "application/json", "TRON-PRO-API-KEY": c.AccessToken}
 
 	r, err := req.Post(url, req.BodyJSON(&param), authHeader)
 	if err != nil {
