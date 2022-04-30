@@ -26,6 +26,7 @@ import (
 	"time"
 
 	"github.com/blocktree/go-owcdrivers/addressEncoder"
+	owcrypt "github.com/blocktree/go-owcrypt"
 	"github.com/golang/protobuf/proto"
 	"github.com/golang/protobuf/ptypes/any"
 	"github.com/imroc/req"
