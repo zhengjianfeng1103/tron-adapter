@@ -18,13 +18,13 @@ package tron
 import (
 	"errors"
 	"fmt"
+	"github.com/blocktree/go-owcrypt"
 	"log"
 	"path/filepath"
 	"time"
 
 	"github.com/asdine/storm/q"
 	"github.com/blocktree/go-owcdrivers/addressEncoder"
-	"github.com/blocktree/go-owcrypt"
 	"github.com/blocktree/openwallet/v2/common"
 	"github.com/blocktree/openwallet/v2/common/file"
 	"github.com/blocktree/openwallet/v2/hdkeystore"
